@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+scikit-learn = "==1.5.2"
+numpy = "*"
+matplotlib = "*"
+pandas = "*"
+seaborn = "*"
+
+[dev-packages]
+jupyter = "*"
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.5"
