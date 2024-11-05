@@ -9,11 +9,11 @@ numpy = "*"
 matplotlib = "*"
 pandas = "*"
 seaborn = "*"
-jupyter = "*"
 xgboost = "*"
 
 [dev-packages]
 jupyter = "*"
+pickle5 = "*"
 
 [requires]
 python_version = "3.11"
