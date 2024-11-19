@@ -10,6 +10,7 @@ matplotlib = "*"
 pandas = "*"
 seaborn = "*"
 xgboost = "*"
+flask = "*"
 
 [dev-packages]
 jupyter = "*"
