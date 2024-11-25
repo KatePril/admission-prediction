@@ -51,7 +51,7 @@ docker run -it --rm -p 7860:7860 <image-name>
 ```
 
 ## Deployment
-Both API and gradio application were developed [AWS Fargate](https://aws.amazon.com/fargate/) and [AWS ECS](https://aws.amazon.com/ecs/).
+Both API and gradio application were deployed with [AWS Fargate](https://aws.amazon.com/fargate/) and [AWS ECS](https://aws.amazon.com/ecs/).
 
 API can be accessed via following uri [http://13.48.78.18:9696/predict](http://13.48.78.18:9696/predict). The example request body is provided below:
 ```json
