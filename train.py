@@ -4,6 +4,7 @@ import pickle
 from sklearn.feature_extraction import DictVectorizer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import roc_auc_score
 
 data = pd.read_csv("dataset/MBA.csv")
 data.fillna(value={'race':  "Unknown"}, inplace=True)
@@ -26,6 +27,10 @@ X_test = dv.fit_transform(test_dict)
 
 model = RandomForestClassifier(max_depth=5, n_estimators=80, min_samples_leaf=15, max_features="sqrt", bootstrap=True)
 model.fit(X_full_train, y_train)
+
+y_pred = model.predict_proba(X_test)[:, 1]
+print(roc_auc_score(y_test, y_pred))
+
 
 model_file = "model.bin"
 with open(model_file, 'wb') as f:

@@ -11,6 +11,7 @@ pandas = "*"
 seaborn = "*"
 xgboost = "*"
 flask = "*"
+gradio = "*"
 gunicorn = "*"
 
 [dev-packages]
