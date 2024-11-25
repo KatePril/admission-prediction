@@ -28,4 +28,5 @@ The model with the highest ROC AUC score (0.8937) is the [RandomForestClassifier
 - `bootstrap=True`
 
 The training process for the final model is available in the [`train.py`](https://github.com/KatePril/admission-prediction/blob/main/train.py) file, 
-and the API source code is provided in the [`predict.py`](https://github.com/KatePril/admission-prediction/blob/main/predict.py) file.
+and the API source code is provided in the [`predict.py`](https://github.com/KatePril/admission-prediction/blob/main/predict.py) file. 
+For the simplier user interaction I also developed a gradio application, source code of which is provided in [`gradio_interface.py`](https://github.com/KatePril/admission-prediction/blob/main/gradio/gradio_interface.py)
