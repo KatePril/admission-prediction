@@ -31,6 +31,25 @@ The training process for the final model is available in the [`train.py`](https:
 and the API source code is provided in the [`predict.py`](https://github.com/KatePril/admission-prediction/blob/main/predict.py) file. 
 For the simplier user interaction I also developed a gradio application, source code of which is provided in [`gradio_interface.py`](https://github.com/KatePril/admission-prediction/blob/main/gradio/gradio_interface.py)
 
+## Run project locally
+If you want to run Flask API locally, type the following commands in the project main directory
+```bash
+docker build -t <image-name> .
+```
+
+```bash
+docker run -it --rm -p 9696:9696 <image-name>
+```
+
+If you want to run Gradio app locally, type the following commands in the [gradio directory](https://github.com/KatePril/admission-prediction/tree/main/gradio)
+```bash
+docker build -t <image-name> .
+```
+
+```bash
+docker run -it --rm -p 7860:7860 <image-name>
+```
+
 ## Deployment
 Both API and gradio application were developed [AWS Fargate](https://aws.amazon.com/fargate/) and [AWS ECS](https://aws.amazon.com/ecs/).
 
