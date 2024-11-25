@@ -68,7 +68,7 @@ API can be accessed via following uri [http://13.48.78.18:9696/predict](http://1
 ```
 The gradio application can be accessed via following uri [http://51.20.124.25:7860/](http://51.20.124.25:7860/)
 
-The video of the example interaction is avaliable in YouTube
+The video of the example interaction is avaliable on [YouTube](https://www.youtube.com/watch?v=ogAKMQs1voA)
 
 So as to deploy the container to the cloud, you need to create AWS account, [install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and log in to AWS CLI using the following command
 ```bash
