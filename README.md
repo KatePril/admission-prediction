@@ -30,3 +30,23 @@ The model with the highest ROC AUC score (0.8937) is the [RandomForestClassifier
 The training process for the final model is available in the [`train.py`](https://github.com/KatePril/admission-prediction/blob/main/train.py) file, 
 and the API source code is provided in the [`predict.py`](https://github.com/KatePril/admission-prediction/blob/main/predict.py) file. 
 For the simplier user interaction I also developed a gradio application, source code of which is provided in [`gradio_interface.py`](https://github.com/KatePril/admission-prediction/blob/main/gradio/gradio_interface.py)
+
+## Deployment
+Both API and gradio application were developed [AWS Fargate](https://aws.amazon.com/fargate/) and [AWS ECS](https://aws.amazon.com/ecs/).
+
+API can be accessed via following uri [http://13.48.78.18:9696/predict](http://13.48.78.18:9696/predict). The example request body is provided below:
+```json
+{
+    "gender": "Female",
+    "international": false,
+    "gpa": 3.1,
+    "major": "STEM",
+    "race": "Black",
+    "gmat": 760.0,
+    "work_exp": 5.0,
+    "work_industry": "Consulting"
+}
+```
+The gradio application can be accessed via following uri [http://51.20.124.25:7860/](http://51.20.124.25:7860/)
+
+The video of the example interaction is avaliable in YouTube
