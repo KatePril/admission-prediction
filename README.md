@@ -69,3 +69,34 @@ API can be accessed via following uri [http://13.48.78.18:9696/predict](http://1
 The gradio application can be accessed via following uri [http://51.20.124.25:7860/](http://51.20.124.25:7860/)
 
 The video of the example interaction is avaliable in YouTube
+
+So as to deploy the container to the cloud, you need to create AWS account, [install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and log in to AWS CLI using the following command
+```bash
+aws configure
+```
+To push your image to Amazon Elastic Container Registry run the commands below:
+
+```bash
+docker build -t <image-name> .
+```
+```bash
+aws ecr create-repository --repository-name <repository-name> --region <your-region>
+```
+```bash
+docker tag <image-name> <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com/<repository-name>
+```
+```bash
+aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com
+```
+```bash
+docker push <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com/<repository-name>
+```
+[Check documentation for a more detailed description](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-container-image.html)
+
+Verify the successful creation of container creation in [AWS Console](https://signin.aws.amazon.com/signup?request_type=register) in Elastic Container Registry
+
+Create a task definition in **_Task definitions_** by pressing **_Create new task definition_**. Paste the uri of the repository you have just pushed to **_Image URI_** field.
+
+Create a new cluster in **_Elastic Container Service_** by pressing **_Create cluster_**. In the **_Infrastructure_** section select AWS Fargate (serverless)
+
+Create new service for the created cluster by pressing **_Create_** In the **_Deployment configuration_** section select in the Family field select a task definition you created
