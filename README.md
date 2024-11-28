@@ -1,4 +1,4 @@
-## Problem
+## Problem Description
 The admission process is equally important for both universities and applicants.
 While universities aim to select the best students, applicants are eager to secure a spot in their dream college.
 
