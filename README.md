@@ -31,8 +31,30 @@ The training process for the final model is available in the [`train.py`](https:
 and the API source code is provided in the [`predict.py`](https://github.com/KatePril/admission-prediction/blob/main/predict.py) file. 
 For the simplier user interaction I also developed a gradio application, source code of which is provided in [`gradio_interface.py`](https://github.com/KatePril/admission-prediction/blob/main/gradio/gradio_interface.py)
 
+## Install dependencies
+Install pipenv with a following command:
+```bach
+pip install pipenv
+```
+If you want to istall all the dependencies, run:
+```bach
+pipenv install
+```
+If you want to install only the production dependencies, use
+```bach
+pipenv install --ignore-pipfile --deploy
+```
+
 ## Run project locally
 If you want to run Flask API locally, type the following commands in the project main directory
+```bash
+git clone https://github.com/KatePril/admission-prediction.git
+```
+
+```bash
+cd admission-prediction
+```
+
 ```bash
 docker build -t <image-name> .
 ```
