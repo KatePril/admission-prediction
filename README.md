@@ -75,7 +75,7 @@ docker run -it --rm -p 7860:7860 <image-name>
 ## Deployment
 Both API and gradio application were deployed with [AWS Fargate](https://aws.amazon.com/fargate/) and [AWS ECS](https://aws.amazon.com/ecs/).
 
-API can be accessed via following uri [http://13.48.78.18:9696/predict](http://13.48.78.18:9696/predict). The example request body is provided below:
+API can be accessed via following uri http://public-ip:9696/predict. The example request body is provided below:
 ```json
 {
     "gender": "Female",
@@ -88,7 +88,7 @@ API can be accessed via following uri [http://13.48.78.18:9696/predict](http://1
     "work_industry": "Consulting"
 }
 ```
-The gradio application can be accessed via following uri [http://51.20.124.25:7860/](http://51.20.124.25:7860/)
+The gradio application can be accessed via  uri http://public-ip:7860/
 
 The video of the example interaction is avaliable on [YouTube](https://www.youtube.com/watch?v=ogAKMQs1voA)
 
