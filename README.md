@@ -90,7 +90,6 @@ API can be accessed via following uri http://public-ip:9696/predict. The example
 ```
 The gradio application can be accessed via  uri http://public-ip:7860/
 
-The video of the example interaction is avaliable on [YouTube](https://www.youtube.com/watch?v=ogAKMQs1voA)
 
 So as to deploy the container to the cloud, you need to create AWS account, [install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) and log in to AWS CLI using the following command
 ```bash
@@ -117,8 +116,10 @@ docker push <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com/<repositor
 
 Verify the successful creation of container creation in [AWS Console](https://signin.aws.amazon.com/signup?request_type=register) in Elastic Container Registry
 
-Create a task definition in **_Task definitions_** by pressing **_Create new task definition_**. Paste the uri of the repository you have just pushed to **_Image URI_** field.
+Navigate to AWS Elastic Container Service using service search bar. Create a task definition in **_Task definitions_** by pressing **_Create new task definition_**. Paste the uri of the repository you have just pushed to **_Image URI_** field. Change container port to 9696 for Flask API application or to 7860 for Gradio application.
 
-Create a new cluster in **_Elastic Container Service_** by pressing **_Create cluster_**. In the **_Infrastructure_** section select AWS Fargate (serverless)
+Create a new cluster in **_Elastic Container Service_** by pressing **_Create cluster_**. In the **_Infrastructure_** section select AWS Fargate (serverless). Click **_Create_**.
 
-Create new service for the created cluster by pressing **_Create_** In the **_Deployment configuration_** section select in the Family field select a task definition you created
+Click on the name of the created cluster, navigate to the ***Tasks* tab . Click **Run new task** In the **_Deployment configuration_** section select in the Family field select a task definition you created. Click **Create**
+
+The video of the example interaction is avaliable on [YouTube](https://www.youtube.com/watch?v=ogAKMQs1voA)
